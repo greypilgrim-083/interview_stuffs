@@ -1,0 +1,116 @@
+/* ===== glossy-merged.css =====
+   Merged Glossy Touch + Bootstrap overrides
+   Place in: blog/static/blog/css/glossy-merged.css
+*/
+
+/* basic reset */
+* { box-sizing: border-box; margin:0; padding:0; }
+html,body { height:100%; }
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg,#0c0c0c 0%,#1a1a2e 15%,#16213e 35%,#0f3460 50%,#533a7d 70%,#8b5a8c 85%,#a0616a 100%);
+  color: #fff;
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* background animated shapes */
+.bg-shapes{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;overflow:hidden}
+.shape{position:absolute;background:rgba(255,255,255,.06);animation:float 6s ease-in-out infinite;box-shadow:0 8px 32px rgba(255,255,255,0.06)}
+.shape:nth-child(1){width:140px;height:90px;border-radius:15px;top:12%;left:6%;transform:rotate(12deg)}
+.shape:nth-child(2){width:110px;height:150px;border-radius:12px;top:60%;right:12%;transform:rotate(-20deg)}
+.shape:nth-child(3){width:100px;height:70px;border-radius:10px;bottom:18%;left:20%;transform:rotate(25deg)}
+.shape:nth-child(4){width:80px;height:120px;border-radius:8px;top:8%;right:30%;transform:rotate(-10deg)}
+.shape:nth-child(5){width:120px;height:70px;border-radius:14px;bottom:40%;right:20%;transform:rotate(30deg)}
+.shape:nth-child(6){width:95px;height:95px;border-radius:20px;top:40%;left:5%;transform:rotate(-15deg)}
+@keyframes float{0%,100%{transform:translateY(0px)}50%{transform:translateY(-20px)}}
+
+/* glass surface common */
+.glass, .nav-glossy, .footer-glossy, .blog-card, .post-hero, .glass-badge {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 14px;
+  transition: all .25s ease;
+  color: #fff;
+}
+.glass:hover, .blog-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(0,0,0,0.25); }
+
+/* layout containers */
+.container { max-width: 1180px; margin: 0 auto; padding: 0 18px; }
+.content-wrapper { min-height: calc(100vh - 220px); }
+
+/* header nav */
+header { padding: 20px 0; }
+.nav-glossy { padding: 14px 20px; display:flex; gap:16px; align-items:center; justify-content:space-between; }
+.logo-icon { width:48px; height:48px; border-radius:10px; display:flex; align-items:center; justify-content:center; cursor:pointer; }
+.site-title { font-weight:600; font-size:1.1rem; color:white; text-decoration:none; }
+.nav-links a { color: rgba(255,255,255,0.9); text-decoration:none; padding:8px 12px; border-radius:10px; }
+.nav-links a:hover { background: rgba(255,255,255,0.06); color: #fff; text-shadow:0 0 8px rgba(255,255,255,0.06); }
+
+/* hero */
+.hero { padding:36px; border-radius:14px; overflow:hidden; }
+.hero h1 { font-size:2.4rem; line-height:1.05; margin-bottom:12px; color:white; text-shadow:0 4px 20px rgba(0,0,0,0.3); }
+.hero .lead { color: rgba(255,255,255,0.9); margin-bottom:18px; }
+.hero-image img { max-width:520px; border-radius:12px; }
+
+/* cta button */
+.cta-button, .cta-button.btn-lg {
+  display:inline-block; padding:12px 28px; border-radius:50px; text-decoration:none;
+  background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.08));
+  border: 1px solid rgba(255,255,255,0.16);
+  color: white; font-weight:600;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.cta-button:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,0.28); }
+
+/* posts grid */
+.posts-grid h2 { color:white; margin-bottom:12px; }
+.blog-card { border-radius:14px; padding:16px; color:#fff; }
+.blog-card .card-title { font-size:1.05rem; font-weight:600; color:white; }
+.blog-card .card-text { color: rgba(255,255,255,0.9); }
+.score-number { background: rgba(255,255,255,0.08); padding:6px 10px; border-radius:999px; color:white; }
+
+/* Bootstrap integration: cards, badges, buttons, inputs */
+.card { background: rgba(255,255,255,0.10) !important; border-radius: 14px !important; border: 1px solid rgba(255,255,255,0.12) !important; color: white !important; }
+.card .card-body { padding: 16px !important; }
+
+/* badges */
+.badge { background: rgba(255,255,255,0.10) !important; color: white !important; border: 1px solid rgba(255,255,255,0.12) !important; padding: 6px 10px; border-radius: 12px; }
+
+/* buttons */
+.btn, button { border-radius: 50px !important; border: 1px solid rgba(255,255,255,0.12) !important; background: rgba(255,255,255,0.06) !important; color: #fff !important; padding-top:8px; padding-bottom:8px; }
+.btn:hover { transform: translateY(-3px); background: rgba(255,255,255,0.12) !important; }
+
+/* form controls */
+.form-control { background: rgba(255,255,255,0.06) !important; border: 1px solid rgba(255,255,255,0.12) !important; color: white !important; border-radius: 10px !important; padding: 10px 12px !important; }
+.form-control::placeholder { color: rgba(255,255,255,0.6) !important; }
+.form-text { color: rgba(255,255,255,0.7) !important; }
+
+/* headings & text */
+h1,h2,h3,h4,h5,h6,p,small,label { color: white !important; }
+
+/* footer */
+.footer-glossy { padding:16px; border-radius: 10px; display:block; }
+.footer-links a { color: rgba(255,255,255,0.78); margin:0 8px; text-decoration:none; }
+.footer-links a:hover { color: white; text-shadow:0 0 8px rgba(255,255,255,0.08); }
+
+/* comment card */
+.comments-section .card { margin-bottom: 12px; }
+
+/* small utilities */
+.text-truncate { display:block; max-height: 4.2em; overflow:hidden; text-overflow:ellipsis; }
+
+/* responsive tweaks */
+@media (max-width: 900px) {
+  .hero h1 { font-size: 1.8rem; }
+  .logo-icon { display:none; }
+  .site-title { font-size: 1rem; }
+  .hero-image img { max-width: 100%; }
+}
+
+/* ripple animation utility (JS uses) */
+.ripple { position: absolute; border-radius: 50%; transform: scale(0); animation: rippleAnim .6s linear; background: rgba(255,255,255,0.25); }
+@keyframes rippleAnim { to { transform: scale(4); opacity:0; } }
